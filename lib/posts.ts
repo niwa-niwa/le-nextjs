@@ -6,3 +6,23 @@ export async function getAllPostsData(){
   const posts = await res.json();
   return posts;
 }
+
+export async function getAllPostIds(){
+  const res = await fetch(new URL(apiUrl));
+  const posts = await res.json();
+
+  return posts.map((post:any) => {
+    return {
+      params:{// mos the key name is "params"
+        id: String(post.id),
+      },
+    };
+  });
+}
+
+export async function getPostData(id:string){
+  const res = await fetch(new URL(`${apiUrl}/${id}/`));
+  const post = await res.json();
+
+  return {post};
+}
