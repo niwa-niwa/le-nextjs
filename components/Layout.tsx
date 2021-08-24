@@ -1,11 +1,16 @@
 import Head from "next/head";
 import Link from "next/link";
 import { ReactNode } from "react";
-import Image from 'next/image'
+import Image from "next/image";
 
-
-const Layout = ({children, title = "HP by Next.js"}:{children:ReactNode, title:string})=>{
-  return(
+const Layout = ({
+  children,
+  title = "HP by Next.js",
+}: {
+  children: ReactNode;
+  title: string;
+}) => {
+  return (
     <div className="flex justify-center items-center flex-col min-h-screen text-gray-600 text-sm font-mono">
       <Head>
         <title>{title}</title>
@@ -23,7 +28,7 @@ const Layout = ({children, title = "HP by Next.js"}:{children:ReactNode, title:s
               <Link href="/blog-page">
                 <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded">
                   Blog
-                  </a>
+                </a>
               </Link>
               <Link href="/contact-page">
                 <a className="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded">
@@ -45,7 +50,7 @@ const Layout = ({children, title = "HP by Next.js"}:{children:ReactNode, title:s
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className="">
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
@@ -53,5 +58,5 @@ const Layout = ({children, title = "HP by Next.js"}:{children:ReactNode, title:s
       </footer>
     </div>
   );
-}
+};
 export default Layout;

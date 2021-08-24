@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-const Post = ({ post }:{post:any}) => {
-  return(
+const Post = ({ post }: { post: any }) => {
+  return (
     <div key={post.id}>
       <span>{post.id}</span>
       {" : "}
@@ -12,5 +12,5 @@ const Post = ({ post }:{post:any}) => {
       </Link>
     </div>
   );
-}
+};
 export default Post;
