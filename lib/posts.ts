@@ -24,5 +24,5 @@ export async function getPostData(id:string){
   const res = await fetch(new URL(`${apiUrl}/${id}/`));
   const post = await res.json();
 
-  return {post};
+  return post;
 }
